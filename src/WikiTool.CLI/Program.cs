@@ -6,7 +6,7 @@ namespace WikiTool.CLI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("WikiTool.CLI - .NET 5.0");
         }
     }
 }
