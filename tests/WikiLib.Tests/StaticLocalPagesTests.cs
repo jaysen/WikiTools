@@ -1,6 +1,5 @@
 using System.IO;
 using WikiLib.Pages;
-using WikiLib.Tests;
 
 using Xunit;
 
