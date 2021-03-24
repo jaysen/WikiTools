@@ -5,30 +5,31 @@ namespace WikiLib.Pages
 
     public abstract class LocalPage : Page
     {
-        protected LocalPage(string location) : base(location)
-        {
-            if (!File.Exists(location))
-            {
-                throw new FileNotFoundException("Wiki Page does not exist", location);
-            }
-
-            PageName = Path.GetFileNameWithoutExtension(location);
-        }
+        public string PagePath { get; set; }
 
         private string _contents;
+        
+        protected LocalPage(string path)
+        {
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException("Wiki Page does not exist", path);
+            }
 
-
+            PagePath = path;
+            Name = Path.GetFileNameWithoutExtension(path);
+        }
 
         public override string GetPageContent()
         {
-            _contents = File.ReadAllText(Location);
-            IsRead = true;
+            _contents = File.ReadAllText(PagePath);
+            ContentIsStale = true;
             return _contents;
         }
 
         public override bool ContainsText(string searchStr)
         {
-            if (!IsRead)
+            if (ContentIsStale)
             {
                 GetPageContent();
             }

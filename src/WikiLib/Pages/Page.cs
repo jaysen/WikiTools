@@ -4,15 +4,14 @@ namespace WikiLib.Pages
 {
     public abstract class Page
     {
+        public string Name { get; set; }
 
-        public string PageName { get; set; }
-        public string Location { get; private set; }
-        
-        public bool IsRead { get; set; }
+        public bool ContentIsStale { get; set; } = true;
 
-        protected Page(string location)
+        protected Page() { }
+        protected Page(string name)
         {
-            Location = location;
+            Name = name;
         }
 
         public abstract List<string> GetLinks();
@@ -22,5 +21,6 @@ namespace WikiLib.Pages
         public abstract string GetPageContent();
 
         public abstract bool ContainsText(string searchStr);
+
     }
 }
