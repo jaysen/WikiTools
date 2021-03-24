@@ -5,6 +5,10 @@ namespace WikiLib.Wikis
 
     public abstract class LocalWiki : Wiki
     {
+        public string RootPath { get; set; }
+
+        public string FileExtension { get; private set; } 
+            
         // Constructor
         protected LocalWiki(string rootPath)
         {
@@ -12,7 +16,7 @@ namespace WikiLib.Wikis
             {
                 throw new DirectoryNotFoundException($"Directory {rootPath} does not exist");
             }
-            Location = rootPath;
+            RootPath = rootPath;
         }
     }
 }

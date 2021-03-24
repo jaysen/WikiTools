@@ -30,7 +30,7 @@ namespace WikiLib.Tests
                 Directory.Delete(_dataDir, true);
             }
             var expected = _testDir;
-            var sut = new WikidPadWiki(_testDir);
+            var sut = new WikidpadWiki(_testDir);
             //actual
             var actual = sut.DataDir;
 
@@ -45,7 +45,7 @@ namespace WikiLib.Tests
             //arrange
             Directory.CreateDirectory(_dataDir);
             var expected = _dataDir;
-            var sut = new WikidPadWiki(_testDir);
+            var sut = new WikidpadWiki(_testDir);
             //actual
             var actual = sut.DataDir;
 
@@ -64,10 +64,10 @@ namespace WikiLib.Tests
             File.Create(Path.Combine(_dataDir, @"TestOne.wiki"));
             File.Create(Path.Combine(_dataDir, @"TestTwo.wiki"));
             //actual
-            var sut = new WikidPadWiki(_testDir);
+            var sut = new WikidpadWiki(_testDir);
             
-            Assert.Equal("TestOne", sut.Pages[0].PageName);
-            Assert.Equal("TestTwo", sut.Pages[1].PageName);
+            Assert.Equal("TestOne", sut.Pages[0].Name);
+            Assert.Equal("TestTwo", sut.Pages[1].Name);
 
         }
         
@@ -81,13 +81,13 @@ namespace WikiLib.Tests
             File.WriteAllText(Path.Combine(_dataDir, "TestOne.wiki"), expected);
             File.WriteAllText(Path.Combine(_dataDir, "TestTwo.wiki"), expected2);
             //actual
-            var sut = new WikidPadWiki(_testDir);
+            var sut = new WikidpadWiki(_testDir);
             
             Assert.Equal(expected, sut.Pages[0].GetPageContent());
             Assert.Equal(expected2, sut.Pages[1].GetPageContent());
 
-            Assert.True(sut.Pages[0].IsRead);            
-            Assert.True(sut.Pages[1].IsRead);
+            Assert.True(sut.Pages[0].ContentIsStale);            
+            Assert.True(sut.Pages[1].ContentIsStale);
 
 
         }
