@@ -365,3 +365,6 @@ FodyWeavers.xsd
 
 # TEST Data
 /test_data/
+
+# Rider IDE settings
+/.idea/
