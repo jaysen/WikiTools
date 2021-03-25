@@ -14,12 +14,13 @@ namespace WikiLib
             {
                 DataDir = rootPath;
             }
-            Pages = GetAllPages();
+
+            FileExtension = ".wiki";
         }
 
         public override List<Page> GetAllPages()
         {
-            var files = Directory.EnumerateFiles(DataDir, "*.wiki");
+            var files = Directory.EnumerateFiles(DataDir, $"*{FileExtension}");
             var pages = new List<Page>();
             foreach (var file in files)
             {

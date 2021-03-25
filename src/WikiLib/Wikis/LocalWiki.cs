@@ -6,7 +6,7 @@ namespace WikiLib
     {
         public string RootPath { get; set; }
 
-        public string FileExtension { get; private set; } 
+        public string FileExtension { get; set; } 
             
         // Constructor
         protected LocalWiki(string rootPath)

@@ -64,9 +64,11 @@ namespace WikiLib.Tests
             File.Create(Path.Combine(_dataDir, @"TestTwo.wiki"));
             //actual
             var sut = new WikidpadWiki(_testDir);
-            
-            Assert.Equal("TestOne", sut.Pages[0].Name);
-            Assert.Equal("TestTwo", sut.Pages[1].Name);
+            var pageList = sut.GetAllPages();
+
+            //assert
+            Assert.Equal("TestOne", pageList[0].Name);
+            Assert.Equal("TestTwo", pageList[1].Name);
 
         }
         
@@ -81,12 +83,14 @@ namespace WikiLib.Tests
             File.WriteAllText(Path.Combine(_dataDir, "TestTwo.wiki"), expected2);
             //actual
             var sut = new WikidpadWiki(_testDir);
-            
-            Assert.Equal(expected, sut.Pages[0].GetPageContent());
-            Assert.Equal(expected2, sut.Pages[1].GetPageContent());
+            var pageList = sut.GetAllPages();
 
-            Assert.True(sut.Pages[0].ContentIsStale);            
-            Assert.True(sut.Pages[1].ContentIsStale);
+            //assert
+            Assert.Equal(expected, pageList[0].GetPageContent());
+            Assert.Equal(expected2, pageList[1].GetPageContent());
+
+            Assert.True(pageList[0].ContentIsStale);            
+            Assert.True(pageList[1].ContentIsStale);
 
 
         }
