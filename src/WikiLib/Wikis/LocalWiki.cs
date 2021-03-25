@@ -1,8 +1,7 @@
 ﻿using System.IO;
 
-namespace WikiLib.Wikis
+namespace WikiLib
 {
-
     public abstract class LocalWiki : Wiki
     {
         public string RootPath { get; set; }

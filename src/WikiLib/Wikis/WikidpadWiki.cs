@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using WikiLib.Pages;
 
-namespace WikiLib.Wikis
+namespace WikiLib
 {
     public class WikidpadWiki : LocalWiki
     {

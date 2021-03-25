@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WikiLib.Pages
+namespace WikiLib
 {
     public class WikidpadPage : LocalPage
     {

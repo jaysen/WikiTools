@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace WikiLib.Pages
+namespace WikiLib
 {
 
     public abstract class LocalPage : Page

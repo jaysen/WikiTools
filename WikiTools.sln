@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F2C3CADE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WikiLib.Tests", "tests\WikiLib.Tests\WikiLib.Tests.csproj", "{3628B51E-D797-4AE1-A3E4-BDC015296F1B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CE2015EB-583E-4581-B4FD-F04503233C9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3628B51E-D797-4AE1-A3E4-BDC015296F1B} = {F2C3CADE-4AF2-4794-8263-977B0ECDD3A5}
+		{9835C613-81C2-440F-8105-B844C2B39C61} = {CE2015EB-583E-4581-B4FD-F04503233C9D}
+		{96C6C443-D621-4E04-B09B-77A783C9905A} = {CE2015EB-583E-4581-B4FD-F04503233C9D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9FB7CF9-C130-4898-BE8D-84E9916BF080}

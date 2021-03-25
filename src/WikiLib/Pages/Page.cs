@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WikiLib.Pages
+namespace WikiLib
 {
     public abstract class Page
     {

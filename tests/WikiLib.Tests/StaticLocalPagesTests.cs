@@ -1,5 +1,4 @@
 using System.IO;
-using WikiLib.Pages;
 
 using Xunit;
 
